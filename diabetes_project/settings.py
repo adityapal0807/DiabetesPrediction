@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r!3x)h#bly0$^i5&(%!@=#cc*xk28$p6gfz33ohi-jdrjqis3j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','https://yourdiabetespredictor.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
