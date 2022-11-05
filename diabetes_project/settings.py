@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-r!3x)h#bly0$^i5&(%!@=#cc*xk28$p6gfz33ohi-jdrjqis3j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','https://yourdiabetespredictor.herokuapp.com/']
 
 
 # Application definition
@@ -117,6 +117,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+import os
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
