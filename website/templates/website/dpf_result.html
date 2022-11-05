@@ -1,0 +1,24 @@
+{% extends 'website/layout.html'%}
+
+{% load static %}
+
+{% block body %}
+<div class="container" >
+    <center>
+      <h1 style="margin-top: 20vh;">The value of dpf is <span style="color: rgb(169, 221, 65);">{{dpf}}</span></h1>
+    </center>
+    <div style="display: flex;justify-content: center;margin-top: 2.8%;">
+      <p>
+        <ul>
+          <li>Please use this item in The Diabetes Predictor Form in the Diabetes Pedigree Function Column</li>
+          <li>Do not change any decimal because the model recognises even the smallest decimal</li>
+          <li>This is a relative score calculated based on the history of diabetes based in the family history.</li>
+        </ul>
+      </p>
+    </div>
+    <div style="display: flex;justify-content: center;margin-top: 6%;">
+      <a href="{% url 'predict'%}" class="btn btn-primary btn-lg">Diabetes Checker</a>  
+    </div>
+</div>
+    
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'website/layout.html' %}
+
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+    <center><h1>Please select your Location</h1></center>
+    <form action="{% url 'location' %}" method="POST">
+        {% csrf_token %}
+        <center>
+            <div class="form-group row" style="margin-top: 5%;display: flex;justify-content: center;">
+                <label for="staticEmail" class="col-sm-3 col-form-label"><h3>Name Your Country</h3></label>
+                <div class="col-sm-5">
+                    <select class="form-control form-control-lg" name = country required >
+                        <option value="" selected disabled >country</option>
+                        {% for country in countries%}
+                        <option>{{country}}</option>
+                        {%endfor%}
+                      </select>
+                </div>
+              </div>
+              
+        </center>
+       
+        <button class="btn btn-primary btn-lg" style="margin-top: 2%;margin-left: 33vw;" type="submit">Enter</button>
+        
+    </form>
+  
+</div>
+<div class="container mt-5"> 
+  <center>
+    <h3>Why location is important</h3>
+    <ul>
+      <li>Location is an important parameter for predicting diabetes cause the sugar intake changes with the change in location which can subsequently increase or decrease your chances of having diabetes.</li>
+      <li>For eg, if you are from Asia , your probability of getting diabetes is more , but if you are from Alaska or some northern regions of Europe , then your probability of getting diabetes are less.</li>
+    </ul>
+  </center>
+</div>
+<div >
+
+{% endblock %}

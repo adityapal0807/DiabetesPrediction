@@ -1,0 +1,213 @@
+{% extends 'website/layout.html'%}
+
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+    <form action="{% url 'family' %}" method="POST">
+      {% csrf_token%}
+      <div>
+        <h1 style="text-align: center;margin-bottom: 3%;">Parental History</h1>
+        <div class="row" >
+          <div class="col-6">
+            <div class="form-group row">
+              <label for="parent_m" class="col-sm-4 col-form-label">Is the mother Diabetic</label>
+              <div class="col-sm-5">
+                <select class="form-control" name="parent_m" id="exampleFormControlSelect1" required>
+                  <option value="" selected disabled >Yes or No</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group row" >
+            <label for="parents_f" class="col-sm-4 col-form-label">Is the father Diabetic</label>
+            <div class="col-sm-5">
+              <select class="form-control" name="parent_f" id="exampleFormControlSelect1" required>
+                <option value="" selected disabled >Yes or No</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group row">
+              <label for="age_diagnosed_m" class="col-sm-4 col-form-label">If Yes , Then at what age was it found</label>
+              <div class="col-sm-5">
+                <input type="integer" class="form-control" id="age" name="age_diagnosed_m" placeholder="Diagnosed Age" required>
+                <small>If dont know, enter current Age</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group row">
+              <label for="age_diagnosed_f" class="col-sm-4 col-form-label">If Yes , Then at what age was it found</label>
+              <div class="col-sm-5">
+                <input type="integer" class="form-control" id="age" name="age_diagnosed_f" placeholder="Diagnosed Age" required>
+                <small>If dont know, enter current Age</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group row">
+              <label for="age_m" class="col-sm-4 col-form-label">If No , Enter current age</label>
+              <div class="col-sm-5">
+                <input type="integer" class="form-control" id="age" name="age_m" placeholder="Diagnosed Age" required>
+                <small>
+                  <ul>
+                    <li>Please fill both the columns</li>
+                    <li>If Don't know,enter current age</li>
+                    <li>Whatever the answer is , fill either of the columns with similar values.</li>
+                  </ul>
+                </small>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group row">
+              <label for="age_f" class="col-sm-4 col-form-label">If No , Enter Current age</label>
+              <div class="col-sm-5">
+                <input type="integer" class="form-control" id="age" name="age_f" placeholder="Diagnosed Age" required>
+                <small>
+                  <ul>
+                    <li>Please fill both the columns</li>
+                    <li>If Don't know,enter current age</li>
+                    <li>Whatever the answer is , fill either of the columns with similar values.</li>
+                  </ul>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <h1 style="text-align: center;margin-top: 2%; margin-bottom: 3%;">GrandParents History</h1>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group row">
+              <label for="grandmother" class="col-sm-4 col-form-label">Is the Grandmother Diabetic</label>
+              <div class="col-sm-5">
+                <select class="form-control" name="grandmother" id="exampleFormControlSelect1" required>
+                  <option value="" selected disabled >Yes or No</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group row">
+            <label for="grandfather" class="col-sm-4 col-form-label">Is the Grandfather Diabetic</label>
+            <div class="col-sm-5">
+              <select class="form-control" name="grandfather" id="exampleFormControlSelect1" required>
+                <option value="" selected disabled >Yes or No</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group row">
+              <label for="age_diagnosed_gm" class="col-sm-4 col-form-label">If Yes , Then at what age was it found</label>
+              <div class="col-sm-5">
+                <input type="integer" class="form-control" id="age" name="age_diagnosed_gm" placeholder="Diagnosed Age" required>
+                <small>If Don't know, enter current age </small>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group row">
+              <label for="age_diagnosed_gf" class="col-sm-4 col-form-label">If Yes , Then at what age was it found</label>
+              <div class="col-sm-5">
+                <input type="integer" class="form-control" id="age" name="age_diagnosed_gf" placeholder="Diagnosed Age" required>
+                <small>If dont know, enter current Age</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group row">
+              <label for="age_gm" class="col-sm-4 col-form-label">If No , Enter current age</label>
+              <div class="col-sm-5">
+                <input type="integer" class="form-control" id="age" name="age_gm" placeholder=" Age" required>
+                <small>
+                  <ul>
+                    <li>Please fill both the columns</li>
+                    <li>If Don't know,enter current age</li>
+                    <li>Whatever the answer is , fill either of the columns with similar values.</li>
+                  </ul>
+                </small>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group row">
+              <label for="age_gf" class="col-sm-4 col-form-label">If No , Enter Current age</label>
+              <div class="col-sm-5">
+                <input type="integer" class="form-control" id="age" name="age_gf" placeholder=" Age" required>
+                <small>
+                  <ul>
+                    <li>Please fill both the columns</li>
+                    <li>If Don't know,enter current age</li>
+                    <li>Whatever the answer is , fill either of the columns with similar values.</li>
+                  </ul>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1 style="text-align: center;margin-top: 2%;margin-bottom: 3%;">Sibling History</h1>
+        {% if len_siblings == 0 %}
+        <p>No Siblings</p>
+        {% else %}
+        {% for sibling in siblings %}
+        <h3 style="text-align: center;margin-top: 2%;">Sibling {{sibling}}</h3>
+
+        <div class="form-group row">
+          <label for="sibling{{sibling}}" class="col-sm-3 col-form-label">Is sibling diebetic</label>
+          <div class="col-sm-9">
+            <select class="form-control" name="sibling{{sibling}}answer" id="exampleFormControlSelect1" required>
+              <option value="" selected disabled >Yes or No</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="age_diagnosed_s{{sibling}}" class="col-sm-3 col-form-label"> If yes, then at what age was it found</label>
+          <div class="col-sm-9">
+            <input type="integer" class="form-control" id="inputPassword" name="age_diagnosed_s{{sibling}}" placeholder="Diagnosed Age" required>
+            <small>If dont know, enter current Age</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="age_s{{sibling}}" class="col-sm-3 col-form-label"> If No, enter current Age</label>
+          <div class="col-sm-9">
+            <input type="integer" class="form-control" id="inputPassword" name="age_s{{sibling}}" placeholder="Age" required>
+            <small>
+              <ul>
+                <li>Please fill both the columns</li>
+                <li>If Don't know,enter current age</li>
+                <li>Whatever the answer is , fill either of the columns with similar values.</li>
+              </ul>
+            </small>
+          </div>
+        </div>
+        
+        {% endfor%}
+        {% endif%}
+
+        <button class="btn btn-primary btn-lg" style="margin-top: 2%;margin-left: 33vw;" type="submit">Enter</button>
+    </form>
+  </div>
+{% endblock %}

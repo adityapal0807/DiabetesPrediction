@@ -1,0 +1,124 @@
+{% extends 'website/layout.html' %}
+
+{% load static %}
+
+{% block body %}
+<div class="container mt-5" >
+    <h1 style="text-align: center;">Diabetes Pedigree Function</h1>
+    <p style="margin-top: 2%;">The Diabetes Pedigree Function is function that scores the likelihood of diabetes based on the family history.
+    The DPF uses information from parents , grandparents and siblings.It provides the genetic influence of affected and unaffected reletives on the subject risk of getting diabetes.</p>
+    <p>The Diabetes Pedigree Function (DPF) is developed to provide a synthesis of the diabetes mellitius history in reletives and the genetic relationship of those reletives to the subject.</p>  
+    <p>The DPF uses information from the parents , grandparents,full and half siblings,full and half aunts and uncles , and the first cousins.</p>
+    <p>It provides a measure of the expected genetic influence of affected and unaffected reletives on the subject's eventual diabetes risk.</p>
+    
+    <h4>The formula for DPF is</h4>
+    <div class="container mt-5" style="display: flex;justify-content: center;">
+      <img src="{% static 'website/dpf_formula.png'%}" style="width: 50%;" alt="">
+    </div>
+
+    <h4 style="margin-top: 4%;">The specifications of the formula are</h4>
+    <div class="container mt-5" style="display: flex;justify-content: center;">
+      <div style="color: rgb(0, 0, 0);">
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-3" style="text-align: center;">
+          <b>i</b>
+        </div>
+        <div class="col-8">
+          <b>ranges over all relatives, who had developed diabetes;</b>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-3" style="text-align: center;">
+          <b>j</b>
+        </div>
+        <div class="col-8">
+          <b>ranges over all relatives, who had NOT developed diabetes;</b>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-3" style="text-align: center;">
+          <b>K</b>
+        </div>
+        <div class="col-8">
+          <b>is the percent of genes shared by the relative , and 
+            <ul>
+              <li>
+                equals 0.500 when the relative is a parent or full sibling.
+              </li>
+              <li>
+                equals 0.250 when the relative is a half sibling, grandparent, aunt or uncle, and  
+              </li>
+              <li>
+                equals 0.125 when the relative is a half aunt , half uncle or first cousin;
+              </li>
+            </ul>
+          </b>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-3" style="text-align: center;">
+          <b>ADM</b>
+        </div>
+        <div class="col-8">
+          <b>is the age in years of relative when diabetes was diagnosed;</b>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-3" style="text-align: center;">
+          <b>ACL</b>
+        </div>
+        <div class="col-8">
+          <b>is the age in years of relative at the last non diabetic examination;</b>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-3" style="text-align: center;">
+          <b>Constants</b>
+        </div>
+        <div class="col-8">
+          <b><ul>
+            <li>The constants 88 and 14 represent , with rare exception the maximum and minimum ages at which reletives of the subjects</li>
+            <li>
+              The constraints 20 and 50 were chosen such that:
+              <ol>
+                <li>A subject with no relatives would have a DPF value slightly lower than the average</li>
+                <li>The DPF value would decrease relatively slowly as young relatives free of Diabetes.</li>
+                <li>The DPF value would increase relatively quickly as known relatives developed Diabetes.</li>
+              </ol>
+            </li>
+          </ul></b>
+        </div>
+      </div>
+
+      </div>
+      
+    </div>
+    <small style="margin-left: 2%;">formula context taken from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2245318/?page=1">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2245318/?page=2</a></small>
+    <div class="container mt-5" >
+        <h2 style="text-align: center;">For the model to work efficently , Please enter the number of your siblings</h2>
+        <div class="container mt-5" >
+          <form action="{% url 'dpf' %}" , method="POST">
+            {% csrf_token %}
+            <center>
+              <select class="form-control form-control-lg" name = "no_of_siblings" style="width:250px;" required>
+                <option value="" selected disabled >Number of siblings</option>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </center>
+            
+            <center><button class="btn btn-primary btn-lg" style="margin-top: 2%;" type="submit">Enter</button></center>
+            </form>
+        </div>
+  </div>
+  </div>
+{% endblock %}
