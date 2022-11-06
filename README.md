@@ -54,3 +54,25 @@ original copyright belongs to [nature.com](https://www.nature.com/)
 -   <https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database>
 -   <https://www.who.int/news-room/fact-sheets/detail/diabetes>
 -   [National Institute of Diabetes and Digestive and Kidney Diseases](https://www.niddk.nih.gov/)
+
+### Disclaimer
+
+-   Due to the limitation of the hosting service the website crashes many times. Thus to run this on your local follow the following steps
+
+    ### How to Run This on Local Website
+
+    To deploy this project run
+
+    ```bash
+
+      $ pip install -r requirements.txt
+
+    ```
+
+    ```bash
+
+      $ python manage.py runserver
+
+    ```
+
+    Woohoo!! Now the website is running on your local
