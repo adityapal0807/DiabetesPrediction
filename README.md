@@ -1,6 +1,12 @@
 Diabetes Predictor ML Model
 ===========================
 
+### Working Snippets
+![](https://yourdiabetespredictor.herokuapp.com/static/website/snippet1.png)
+![](https://yourdiabetespredictor.herokuapp.com/static/website/snippet2.png)
+![](https://yourdiabetespredictor.herokuapp.com/static/website/snippet3.png)
+![](https://yourdiabetespredictor.herokuapp.com/static/website/snippet4.png)
+
 ### Introduction
 
 -   The global disease burden of diabetes increased greatly from 1990 to 2017 .Diabetes mellitus is a leading cause of mortality and reduced life expectancy.The global prevalence of diabetes increased from 211.2 million (196.0--228.5) in 1990 to 476.0 million (436.6--522.8) in 2017, with a 129.7% increase. Global deaths due to diabetes increased from 0.61 million (0.59--0.62) in 1990 to 1.37 million (1.34--1.40) in 2017, with a 125.5% increase.
@@ -64,15 +70,11 @@ original copyright belongs to [nature.com](https://www.nature.com/)
     To deploy this project run
 
     ```bash
-
       $ pip install -r requirements.txt
-
     ```
 
     ```bash
-
       $ python manage.py runserver
-
     ```
 
     Woohoo!! Now the website is running on your local
