@@ -25,7 +25,7 @@
             <a class="nav-item nav-link px-3" style="font-size: 120%;" href="{% url 'location' %}">Predictor</a>
             <a class="nav-item nav-link px-3" style="font-size: 120%;" href="{% url 'dpf' %}">DPF Calculator</a>
             {% if message %}
-            <a class="nav-item nav-link px-3" style="font-size: 120%;float: right;" href="/sibling">You are in {{message}}</a>
+            <a class="nav-item nav-link px-3" style="font-size: 120%;float: right;" href="{% url 'location' %}">You are in {{message}}</a>
             {% endif %}
           </div>
         </div>
