@@ -2,7 +2,7 @@ Diabetes Predictor ML Model
 ===========================
 
 ### Working Snippets
-![](https://yourdiabetespredictor.herokuapp.com/static/website/snippet1.30f9894abeed.png)
+![](static/website/snippet1.png)
 ![](https://yourdiabetespredictor.herokuapp.com/static/website/snippet2.png)
 ![](https://yourdiabetespredictor.herokuapp.com/static/website/snippet3.png)
 ![](https://yourdiabetespredictor.herokuapp.com/static/website/snippet4.png)
